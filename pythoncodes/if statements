@@ -1,0 +1,17 @@
+life = 3
+
+if life > 0:
+    life -= 1
+if life > 0:
+    life -= 1
+if life > 0:    
+    life -= 1
+if life > 0:    
+    life -= 1
+if life > 0:    
+    life -= 1
+elif life == 0:
+    print("you have 0 life") 
+else:
+    print("the player ran out of Life")
+print(life)

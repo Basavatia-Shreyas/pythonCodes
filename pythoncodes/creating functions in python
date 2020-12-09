@@ -1,0 +1,11 @@
+import random
+
+health = 10
+
+def hit_the_player():
+    global health
+    roll_the_die = random.randrange(1, 7)
+    health -= roll_the_die
+
+hit_the_player()
+print("Health is " + str(health)) 
