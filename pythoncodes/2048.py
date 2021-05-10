@@ -3,11 +3,14 @@ import random
 rows, colums = (4,4)
 game_board = [['*'] * colums] * rows
 
+largest_piece = 0
+
 
 # to do this. create a list of all the taken spaces then check is the space to the left or right or up or down is avalable. If so. move them. 
 
 def up():
   # move all the piece up
+  
   
 def down():
   # move all the pieces down
@@ -27,6 +30,22 @@ def move():
   value = False
   while value ==False:
     value = generate_new_piece(new_piece)
+    
+  dainput = input("Play")
+  if dainput == 'w':
+    # move up
+    up()
+  elif dainput == 's':
+    # move down
+    down()
+  elif dainput == 'a':
+    # move left
+    left()
+  elif dainput == 'd':
+    # move right
+    right()
+  else:
+    print('please enter a valid input')
     
   
   
@@ -53,6 +72,17 @@ def generate_new_piece(piece_num):
     return False
   
   return True
+
+def main():
+  # generate the initial piece
+  value = False
+  while value ==False:
+    value = generate_new_piece(new_piece)
+    
+  # win condition(if the largest piece is 2048)
+  won = False
+  while won == false:
+    move()
 
 print(game_board)
 move()
