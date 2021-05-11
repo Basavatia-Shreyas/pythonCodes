@@ -2,6 +2,7 @@ import random
 
 rows, colums = (4,4)
 game_board = [['*'] * colums] * rows
+taken_spaces = [['*'] * colums] * rows
 
 largest_piece = 0
 
@@ -11,6 +12,18 @@ largest_piece = 0
 def up():
   # move all the piece up
   
+  # iterate through the array
+  # subtract one since we are checking to see if there is a piece above
+  # THis means we need to add one to the index to prevent out of bounds error. 
+  for i in range(rows-1):
+    for j in range(cols):
+      if game_board[i+1][j] != '*':
+        # if the piece below is something, move it up one. 
+        game_board[i][j] = game_board[i+1][j]
+        # set the below piece back to *
+        game_board[i+1][j] = '*'
+        
+        
   
 def down():
   # move all the pieces down
@@ -81,6 +94,7 @@ def main():
     
   # win condition(if the largest piece is 2048)
   won = False
+  largest_piece = 2
   while won == false:
     move()
 
